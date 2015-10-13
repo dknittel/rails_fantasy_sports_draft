@@ -1,0 +1,9 @@
+<%= javascript_include_tag 'components'%>
+
+<% if @props[:full_teams] %>
+	<%= react_component("EndDraft", @props) %>
+<% end %>
+
+<%= react_component("Drafts", @props) %>
+</br>
+
