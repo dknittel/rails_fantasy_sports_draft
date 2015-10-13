@@ -12,7 +12,8 @@ Use cases: A user can signup or login and can create a draft. A user can also se
 
 Why React: I used react in this project because I wanted to use a single page on my drafts page so that it would not refresh each time a player is selected.
 
-Code: This project is built with a rails backend and React frontend. 
+Code: 
+This project is built with a rails backend and React frontend. 
 
 Databases: There are 6 tables in the database: users, drafts, pools, teams, draftees, and players. I also have routes for users and drafts with nested routes under drafts for players, teams, and draftees. My seed file contains an api call that requests from fantasydata.net and retrieves stats from all NBA players in the 2015 season.
 Controllers: My draft controller contains the majority of my logic. My application controller contains helper functions for my draft and user controllers. 
