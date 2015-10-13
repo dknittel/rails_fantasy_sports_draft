@@ -2,6 +2,8 @@ Fantasy Sports Draft
 
 Daniel Knittel
 
+NOTE: This project was ported from another repo, which is why there are so few commits. To see the history of commits, please go to github.com/dknittel/rails_passion_project.
+
 Purpose: The purpose of this website is to allow users to create drafts and select players to their teams with their friends.
 
 Target Users: The target users are people who are sports fans and who enjoy playing fantasy sports and drafting players.
