@@ -1,4 +1,3 @@
-# rails_fantasy_sports_draft
 Fantasy Sports Draft
 
 Daniel Knittel
@@ -9,18 +8,20 @@ Target Users: The target users are people who are sports fans and who enjoy play
 
 Use cases: A user can signup or login and can create a draft. A user can also set the number of teams and pool of players they want to draft from when creating a new draft. Users can create a team, name their team, add players to a team, and view player stats.
 
-How it works: Why React: I used react in this project because I wanted to use a single page on my drafts page so that it would not refresh each time a player is selected.
+Why React: I used react in this project because I wanted to use a single page on my drafts page so that it would not refresh each time a player is selected.
 
-Code: (10 min) This project is built with a rails backend and React frontend. Databases: (3 min) There are 6 tables in the database: users, drafts, pools, teams, draftees, and players. I also have routes for users and drafts with nested routes under drafts for players, teams, and draftees. My seed file contains an api call that requests from fantasydata.net and retrieves stats from all NBA players in the 2015 season. Controllers: (3 min) My draft controller contains the majority of my logic. My application controller contains helper functions for my draft and user controllers. React: (4 min) In my drafts show template, I have a call to the Drafts react component in Drafts.js.jsx and pass in the props from my drafts controller. Drafts.js.jsx contains a call to available_player_list.js.jsx which maps individual players from available_player.js.jsx to a players variable and then renders players, returning it back to the Draft constructor. When the Select Player button is clicked, the selectPlayer method in the Draft constructor is called which calls removePlayer to take that player out of available players. This information is then sent to the server via an ajax put request so the draftee associated with that player is given a team id of the current picking team.
+Code: This project is built with a rails backend and React frontend. 
+Databases: There are 6 tables in the database: users, drafts, pools, teams, draftees, and players. I also have routes for users and drafts with nested routes under drafts for players, teams, and draftees. My seed file contains an api call that requests from fantasydata.net and retrieves stats from all NBA players in the 2015 season. Controllers: My draft controller contains the majority of my logic. My application controller contains helper functions for my draft and user controllers. 
+React: In my drafts show template, I have a call to the Drafts react component in Drafts.js.jsx and pass in the props from my drafts controller. Drafts.js.jsx contains a call to available_player_list.js.jsx which maps individual players from available_player.js.jsx to a players variable and then renders players, returning it back to the Draft constructor. When the Select Player button is clicked, the selectPlayer method in the Draft constructor is called which calls removePlayer to take that player out of available players. This information is then sent to the server via an ajax put request so the draftee associated with that player is given a team id of the current picking team.
 
 Challenges: The most difficult challenge of this project was learning a new framework. React is very different from anything else I have worked with so even learning the fundamentals was difficult. The most difficult concept to grasp was props. After much research and trial and error, I was able to understand props enough to use them to pass properties between components.
 
 It was also very difficult to remove the selected players on the drafts page using react. To do this, I had to pass a function from the main drafts constructor to two child constructors and then call the function from there, while passing properties from the child back to the function call in the parent.
 
-Future use of React?: I found react useful so I would consider using it again in the future for things like my final project at DBC. However, I prefer working with backend much more than frontend so I would prefer to be working with things like rails and PHP instead. Nevertheless, this was an excellent experience for me and I am glad I pushed myself to learn something that I am not as comfortable with.
+Future use of React?: I found react useful so I would consider using it again in the future for things like my final project at DBC. However, I prefer working with backend much more than frontend so I would rather be working with things like rails and PHP instead. Nevertheless, this was an excellent experience for me and I am glad I pushed myself to learn something that I am not as comfortable with.
 
-Future features to add: In the future, I would like to see several additional features added. First of all, I would like to fix the error with ending the draft and sending it to the complete page. Also, it would be nice if the drafts page outputted which team is currently picking a player. Also, I would like to have the drafts page display the current team's players so far. Finally, I want to use react to create 'loading' text on the create teams page while the drafts page is loading.
+Future features to add: In the future, I would like to see several additional features added. First of all, I would like to fix the error with ending the draft and sending it to the complete page. Also, it would be nice if the drafts page outputted which team is currently picking a player. Additionally, I would like to have the drafts page display the current team's players so far. Finally, I want to use react to create 'loading' text on the create teams page while the drafts page is loading.
 
-How to contribute: Go to github.com/dknittel/rails_passion_project to contribute
+How to contribute: Go to github.com/dknittel/rails_fantasy_sports_draft to contribute
 
 How to clone the repo: Go to the above url and click on the fork button in the top right. Copy the clone url on the right side of the page and in your terminal type: “git clone <url>”.
