@@ -8,12 +8,16 @@ Purpose: The purpose of this website is to allow users to create drafts and sele
 
 Target Users: The target users are people who are sports fans and who enjoy playing fantasy sports and drafting players.
 
-Use cases: A user can signup or login and can create a draft. A user can also set the number of teams and pool of players they want to draft from when creating a new draft. Users can create a team, name their team, add players to a team, and view player stats.
+Use cases: A user can signup or login and can create a draft. A user can also set the number of teams and pool of players they want to draft from when creating a new draft. Note: Because there is currently only one API for getting player data, the user must put 'NBA 2015'as the input for pool. Users can create a team, name their team, add players to a team, and view player stats.
 
 Why React: I used react in this project because I wanted to use a single page on my drafts page so that it would not refresh each time a player is selected.
 
-Code: This project is built with a rails backend and React frontend. 
-Databases: There are 6 tables in the database: users, drafts, pools, teams, draftees, and players. I also have routes for users and drafts with nested routes under drafts for players, teams, and draftees. My seed file contains an api call that requests from fantasydata.net and retrieves stats from all NBA players in the 2015 season. Controllers: My draft controller contains the majority of my logic. My application controller contains helper functions for my draft and user controllers. 
+Code: 
+This project is built with a rails backend and React frontend. 
+
+Databases: There are 6 tables in the database: users, drafts, pools, teams, draftees, and players. I also have routes for users and drafts with nested routes under drafts for players, teams, and draftees. My seed file contains an api call that requests from fantasydata.net and retrieves stats from all NBA players in the 2015 season.
+Controllers: My draft controller contains the majority of my logic. My application controller contains helper functions for my draft and user controllers. 
+
 React: In my drafts show template, I have a call to the Drafts react component in Drafts.js.jsx and pass in the props from my drafts controller. Drafts.js.jsx contains a call to available_player_list.js.jsx which maps individual players from available_player.js.jsx to a players variable and then renders players, returning it back to the Draft constructor. When the Select Player button is clicked, the selectPlayer method in the Draft constructor is called which calls removePlayer to take that player out of available players. This information is then sent to the server via an ajax put request so the draftee associated with that player is given a team id of the current picking team.
 
 Challenges: The most difficult challenge of this project was learning a new framework. React is very different from anything else I have worked with so even learning the fundamentals was difficult. The most difficult concept to grasp was props. After much research and trial and error, I was able to understand props enough to use them to pass properties between components.
