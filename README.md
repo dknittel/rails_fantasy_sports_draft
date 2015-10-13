@@ -8,7 +8,7 @@ Purpose: The purpose of this website is to allow users to create drafts and sele
 
 Target Users: The target users are people who are sports fans and who enjoy playing fantasy sports and drafting players.
 
-Use cases: A user can signup or login and can create a draft. A user can also set the number of teams and pool of players they want to draft from when creating a new draft. Note: Because there is currently only one API for getting player data, the user must put 'NBA 2015'as the input for pool. Users can create a team, name their team, add players to a team, and view player stats.
+Use cases: A user can signup or login and can create a draft. A user can also set the number of teams and pool of players they want to draft from when creating a new draft. Note: Because there is currently only one API for getting player data, the user must put 'NBA 2015' as the input for pool. Users can create a team, name their team, add players to a team, and view player stats.
 
 Why React: I used react in this project because I wanted to use a single page on my drafts page so that it would not refresh each time a player is selected.
 
