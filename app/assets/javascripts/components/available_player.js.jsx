@@ -17,7 +17,6 @@ var AvailablePlayer = React.createClass({
 			{" "}
 			<button className="waves-effect waves-light btn"><a className="smaller-font white-text" href={href}>View Stats</a></button>
 			{" "}
-			
 			<button className="smaller-font waves-effect waves-light btn" onClick={this.onSelect}>Select Player</button>
 		</div>
 	}

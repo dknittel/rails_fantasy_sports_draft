@@ -1,4 +1,9 @@
 <%= javascript_include_tag 'components'%>
+<%= link_to 'Logout', '/logout', :class => "waves-effect waves-light btn navbar1" %>
+</br>
+</br>
+</br>
+</br>
 
 <% if @props[:full_teams] %>
 	<%= react_component("EndDraft", @props) %>

@@ -28,7 +28,9 @@ var Drafts = React.createClass({
 		// 	return <EndDraft />;
 		// }
     },
-
+  //   render: function () {
+		// return <div className="waves-effect waves-light btn">Logout</div>
+  //   },
 	render: function () {
 		return <AvailablePlayerList players={this.props.available_players} onSelect={this.selectPlayer} draft={this.props.draft}/>;
 	},

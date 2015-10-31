@@ -30,3 +30,16 @@ body {
 	font-size: 15px;
 }
 
+.navbar1 {
+	position: relative;
+	margin-left: 80px;
+	width: 100px;
+	margin-top: 3%;
+	position: relative;
+	float: right;
+}
+.navbar1 > a {
+
+
+}
+
