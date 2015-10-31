@@ -12,10 +12,13 @@ var AvailablePlayer = React.createClass({
 	},
 	render: function () {
 		var href = "/drafts/" + this.props.draft.id + "/players/" + this.props.player.id;
-		return <div>
+		return <div className="white-text">
 			{this.props.player.name}
-			<button><a href={href}>View Stats</a></button>
-			<button onClick={this.onSelect}>Select Player</button>
+			{" "}
+			<button className="waves-effect waves-light btn"><a className="smaller-font white-text" href={href}>View Stats</a></button>
+			{" "}
+			
+			<button className="smaller-font waves-effect waves-light btn" onClick={this.onSelect}>Select Player</button>
 		</div>
 	}
 

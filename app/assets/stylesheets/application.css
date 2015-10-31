@@ -16,3 +16,17 @@
 
 div.hidden { display: none; }
 
+body {
+	background-image: url('warriors.png');
+	color: white;
+}
+
+.white-text {
+	color: white;
+	font-size: 20px;
+}
+
+.smaller-font {
+	font-size: 15px;
+}
+

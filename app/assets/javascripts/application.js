@@ -54,7 +54,7 @@ function selectPlayer() {
     var button = this;
     console.log(button)
     console.log('yooooooo')
-    e.preventDefault();
+    // e.preventDefault();
     function callback(response) {
       console.log('sup')
       counter += 1;

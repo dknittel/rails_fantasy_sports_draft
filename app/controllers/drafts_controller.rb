@@ -8,7 +8,8 @@ class DraftsController < ApplicationController
     @draft = Draft.find(params[:id])
     @team = Team.where(draft_id: @draft.id).where(draft_position: 1)
     if full_teams?(@draft.id)
-      @full_teams = true
+      redirect_to draft_draftees_path
+      # @full_teams = true
     end
     if @draft.current_team > @draft.num_teams
       @draft.current_team = 1
@@ -32,27 +33,33 @@ class DraftsController < ApplicationController
   def update
     params.require(:player_id)
     params.require(:id)
-
+    p '*' * 100
+    p draft_draftees_path(@draft)
     @draft = Draft.find(params[:id])
-    @player = Player.find(params[:player_id])
-    @draftee = Draftee.where(draft_id: @draft.id).find_by(player_id: @player.id)
-    @team = Team.find_by(draft_position: @draft.current_team, draft_id: @draft.id)
-    @draftee.team_id = @team.id
-    @draftee.save
-    @user = auth_current_user
-    @draft.current_team += 1
-    if @draft.save
-      if @draft.current_team > @draft.num_teams
-        @draft.current_team = 1
-        @draft.save
-      end
-      if full_teams?(@draft.id)
-        @full_teams = true
-      end
-      render :json => @draft.as_json(include:[:players])
-    else
-      render :json => {error: @draft.errors.full_messages.join(',')}, status: 400
-    end
+    redirect_to draft_draftees_path(@draft)
+    # @player = Player.find(params[:player_id])
+    # @draftee = Draftee.where(draft_id: @draft.id).find_by(player_id: @player.id)
+    # @team = Team.find_by(draft_position: @draft.current_team, draft_id: @draft.id)
+    # @draftee.team_id = @team.id
+    # @draftee.save
+    # @user = auth_current_user
+    # @draft.current_team += 1
+    # if @draft.save
+    #   if @draft.current_team > @draft.num_teams
+    #     @draft.current_team = 1
+    #     @draft.save
+    #   end
+    #   if full_teams?(@draft.id)
+    #     p 'asdfasdfasdfadfsadfsadfsssssssssssssss'
+    #     redirect_to draft_draftees_path(@draft.id)
+    #     #it's trying to do a put but this is a get/post route
+    #     # @full_teams = true
+    #   else
+    #     render :json => @draft.as_json(include:[:players])
+    #   end
+    # else
+    #   render :json => {error: @draft.errors.full_messages.join(',')}, status: 400
+    # end
   end
 
   def create

@@ -17,8 +17,13 @@ class ApplicationController < ActionController::Base
 
 
   def full_teams?(draft_id)
+    p 'supppppppppppppp'
+    p draft_id
+    p Team.where(draft_id: draft_id)
     Team.where(draft_id: draft_id).each do |team|
+      p Draftee.where(team_id: team.id).count
       if Draftee.where(team_id: team.id).count != 3
+        p 'blahhhhhhhhhhhhhhh'
         return false
       end
     end

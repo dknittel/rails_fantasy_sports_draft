@@ -21,6 +21,9 @@ class DrafteesController < ApplicationController
   def index
     @draft = Draft.find(params[:draft_id])
   end
+  def update
+    @draft = Draft.find(params[:draft_id])
+  end
 
   # def update
   #   @draft = Draft.find(params[:id])

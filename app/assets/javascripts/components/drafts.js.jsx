@@ -22,6 +22,8 @@ var Drafts = React.createClass({
 			url: '/drafts/'+this.props.draft.id, 	
 			data: {player_id: player.id},
 		})
+		console.log('yooooooooooooooooooooooooo')
+		console.log(this.props.full_teams)
 		// if (this.props.full_teams) {
 		// 	return <EndDraft />;
 		// }
